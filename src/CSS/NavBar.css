@@ -1,0 +1,34 @@
+.nav-link 
+{
+    border-style: none;
+    background-color: white;
+}
+
+.navbar-light 
+{
+	background: linear-gradient(270deg, rgba(171,171,171,0.2) 0%, rgba(255,255,255,0.2) 100%);
+
+}
+
+.navbar-parent
+{
+	max-height: 10vh;
+}
+
+.navbar-brand
+{
+	display: flex;
+	align-items: flex-start;
+ 	max-width: 10%;
+	margin-left: 10%;
+}
+
+.logoc
+{
+	width: 120%;
+	
+}
+
+.sign-home-btn {
+	margin-right: 15%;
+}
