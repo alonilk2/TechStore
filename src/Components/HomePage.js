@@ -1,8 +1,10 @@
 import React, { useEffect, useState ,useReducer } from 'react';
-import history from '../history';
 import {useDispatch, useSelector} from 'react-redux';
-import '../CSS/HomePage.css'
 import Axios from 'axios';
+import history from '../history';
+import '../CSS/HomePage.css';
+import '../CSS/Homepage/SubscribeInput.css';
+import QuantityRow from './Homepage/HomeQuantityRow';
 const reducer = (state, action) => {
   switch(action.type) {
     case "increment":
@@ -19,7 +21,7 @@ function HomePage(props)
     const [egames, setegames] = useReducer(reducer, 0);
     const [progress, setProgress] = useReducer(reducer, 0);
     useEffect(() => {
-        let interval, interval1, interval2, interval3;
+        let interval;
         interval = setInterval(() => {
             if(phones < 300) setPhones({type: "increment"});
             if(laptops < 1284) setlaptops({type: "increment"});
@@ -33,28 +35,11 @@ function HomePage(props)
     return (
         <div className="HomePage-Container">
             <div className="main-title">
-                <h1 className="main-title-h1"> All The Technology You Need </h1>
+                <h1 className="main-title-h1"> All The Technology <br />You Need </h1>
                 <h2 className="main-title-h2"> In one single place. </h2>
-                <div className="row main-title-quantity-row">
-                    <div className="col main-title-quantity-column">
-                        <h5 className="main-title-quantity"> {phones} </h5> 
-                        <h7 className="main-title-quantity"> Phones </h7> 
-                    </div>
-                    <div className="col main-title-quantity-column">
-                        <h5 className="main-title-quantity"> {laptops} </h5> 
-                        <h7 className="main-title-quantity"> Laptops </h7> 
-                    </div>
-                    <div className="col main-title-quantity-column">
-                        <h5 className="main-title-quantity"> {appliances} </h5> 
-                        <h7 className="main-title-quantity"> Home Appliances</h7> 
-                    </div>
-                    <div className="col main-title-quantity-column">
-                        <h5 className="main-title-quantity"> {egames} </h5> 
-                        <h7 className="main-title-quantity"> E-Games </h7> 
-                    </div>
-                </div>
+                {QuantityRow(phones, laptops, appliances,egames)}
                 <div className="sign-home-btn home-shopnow-btn">
-                    <a href="/Signin" className="btn btn-primary btn-lg active home-btn" role="button" aria-pressed="true">Shop Now ></a>
+                    <a href="/store" className="btn btn-primary btn-lg active home-btn" role="button" aria-pressed="true">Shop Now ></a>
                 </div>
             </div>
         </div>

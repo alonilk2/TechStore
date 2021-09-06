@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, Switch, Redirect} from 'react-router-dom';
 import {Provider} from 'react-redux';
+
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import HomePage from './Views/HomePage';
 import store from './store';
 import {history} from './history';
+import HomePage from './Views/HomePage';
+import Signin from './Views/Signin';
+import StoreHomeView from './Views/StoreHome';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +17,8 @@ ReactDOM.render(
       <Router history={history}>
         <Switch>
             <Route exact path="/" component={HomePage} />
-            <Redirect from="*" to="/404" />
+            <Route path="/Signin" component={Signin} />
+            <Route path="/store" component={StoreHomeView} />
         </Switch>
       </Router>    
     </Provider>

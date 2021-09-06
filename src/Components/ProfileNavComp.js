@@ -4,16 +4,14 @@ import {useDispatch, useSelector} from 'react-redux';
 import '../CSS/Profile.css'
 import avatar from  '../images/avatar.png';
 import cookie from 'js-cookie';
-//import {signout} from '../Actions/authActions';
+import {signout} from '../Actions/authActions';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
 function ProfileNavComp(props) 
 {
-    const userInstance = cookie.get('userInstance');
+    const userInstance = useSelector((state) => state.user)
     const dispatch = useDispatch();
     if(userInstance) {
-        const user = JSON.parse(userInstance);
-        console.log(user);
         function onClickPc(){
             history.push('/Constraction');
         } 
@@ -23,12 +21,14 @@ function ProfileNavComp(props)
                 <img className="avatar" src={avatar} alt="profile picture"></img>
                 <Dropdown className="user-instance">
                     <Dropdown.Toggle id="dropdown-basic">
-                        Hello {user.data.user.first_name}
+                        Hello {userInstance.data.user.firstname}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                         <Dropdown.Item href="/profile">My Profile</Dropdown.Item>
-                        <Dropdown.Item href="/" /*onClick={()=>{dispatch(signout());}}*/>Logout</Dropdown.Item>
+                        <Dropdown.Item href="/profile">My Orders</Dropdown.Item>
+                        
+                        <Dropdown.Item href="/" onClick={()=>{dispatch(signout());}}>Logout</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
