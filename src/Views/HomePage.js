@@ -15,7 +15,7 @@ class HomePageView extends Component
 					<NavBar/>
 					<HomePage />
 				</div>
-				{SecondContainer()}
+				<SecondContainer />
 				{Footer()}
 			</div>
 		)

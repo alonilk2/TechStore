@@ -2,6 +2,7 @@ import React, { useEffect, useState ,useReducer } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Axios from 'axios';
 import history from '../history';
+import '../CSS/HomePage-mobile.css';
 import '../CSS/HomePage.css';
 import '../CSS/Homepage/SubscribeInput.css';
 import QuantityRow from './Homepage/HomeQuantityRow';
