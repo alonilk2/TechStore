@@ -9,6 +9,8 @@ import store from './store';
 import {history} from './history';
 import HomePage from './Views/HomePage';
 import Signin from './Views/Signin';
+import Signup from './Views/Signup';
+import ApproveView from './Views/ApproveView';
 import StoreHomeView from './Views/StoreHome';
 
 ReactDOM.render(
@@ -18,7 +20,10 @@ ReactDOM.render(
         <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/Signin" component={Signin} />
+            <Route path="/signup" component={Signup} />
             <Route path="/store" component={StoreHomeView} />
+            <Route path="/activate/:userid/:token" component={ApproveView} />
+
         </Switch>
       </Router>    
     </Provider>

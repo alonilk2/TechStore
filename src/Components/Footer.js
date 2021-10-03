@@ -27,7 +27,6 @@ function footer(props)
                             <input class="" type="email" placeholder="What's your email?"></input>
                             <button type="submit">
                             <IoArrowForward />
-
                             </button>
                             <div className="inner-grad"> </div>
                         </div>

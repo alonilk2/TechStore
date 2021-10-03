@@ -86,6 +86,9 @@ h5, h6 {
     background-color: transparent !important;
     border-color: white !important;
     border-width: 2px;
+    width: 100px;
+    margin: auto !important;
+
 }
 .sales-img-1 {
     object-fit: cover;
@@ -138,6 +141,9 @@ h5, h6 {
     flex-direction: column;
     height: 100%;
     padding: 35% 0% 15% 0%;
+    position: absolute;
+    top: 0px;
+    z-index: 0;
 }
 .homepage-container {
     display: flex;
@@ -211,6 +217,9 @@ h5, h6 {
 }
 .topmenu {
     margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .abdev-logo {
@@ -218,6 +227,14 @@ h5, h6 {
     margin: auto;
     margin-top: 10%;
     margin-bottom: 10%;
+}
+.signup-btn {
+    background-color: rgba(255,255,255,1) !important;
+    border-color: transparent !important;
+    border-width: 2px;
+    color: black !important;
+    font-weight: bold;
+    width: 100px;
 }
 .home-btn {
     display: flex;

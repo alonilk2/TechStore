@@ -37,9 +37,14 @@ function ProfileNavComp(props)
     }
     else {
         return (
-        <form className="form-inline my-2 my-lg-0 sign-home-btn">
-            <a href="/Signin" className="btn btn-primary btn-lg active signin-btn" role="button" aria-pressed="true">Sign In</a>
-        </form>
+        <div className="login-btns">  
+            <form className="form-inline my-2 my-lg-0 sign-home-btn">
+                <a href="/Signin" className="btn btn-primary btn-lg active signin-btn" role="button" aria-pressed="true">Sign In</a>
+            </form>
+            <form className="form-inline my-2 my-lg-0 sign-home-btn">
+                <a href="/Signup" className="btn btn-primary btn-lg active signup-btn" role="button" aria-pressed="true">Sign Up</a>
+            </form>
+        </div>
     );}
 }
 export default ProfileNavComp;

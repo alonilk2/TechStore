@@ -9,7 +9,7 @@ import { history } from '../history';
 function signin(email, password) {
     return dispatch => {
         dispatch({type: USER_SIGNIN_ATTEMPT, payload: {}});
-        Axios.post("http://localhost:5000/signin", {
+        Axios.post("https://techstore1.herokuapp.com/signin", {
             email: email,
             password: password
         })
@@ -34,19 +34,20 @@ function signin(email, password) {
 
 }
 
-const signup = (email, password, firstname, lastname, promo) => async (dispatch) => {
+const signup = (email, password, firstname, lastname) => async (dispatch) => {
     dispatch({type: USER_SIGNUP_ATTEMPT, payload: {}});
     try{
-        const user = await Axios.post("https://techstar12.herokuapp.com/signup",{
+        const user = await Axios.post("https://techstore1.herokuapp.com/signup",{
             "email": email,
             "password": password,
             "firstname": firstname,
-            "lastname": lastname,
-            "promo": promo
+            "lastname": lastname
         });
+        console.log(user.data);
         if(user.data.success){
             dispatch({type: USER_SIGNUP_SUCCESS, payload: user});
             history.push('/');
+            alert("An activation email has been sent to your email address. Please visit your email box and follow the instructions.");
         }
         else {
             if(user.data.error === 0)
@@ -66,7 +67,7 @@ const signup = (email, password, firstname, lastname, promo) => async (dispatch)
 
 const forgotPass = (email) => async (dispatch) => {
     try{
-        const response = await Axios.post("https://techstar12.herokuapp.com/forgotPass",{
+        const response = await Axios.post("https://techstore1.herokuapp.com/forgotPass",{
             "email": email
         });
         if(response.data.success === true){
@@ -83,7 +84,7 @@ const forgotPass = (email) => async (dispatch) => {
 
 const updatePass = (email, oldpass, newpass) => async (dispatch) => {
     try{
-        const response = await Axios.post("https://techstar12.herokuapp.com/updatePass",{
+        const response = await Axios.post("https://techstore1.herokuapp.com/updatePass",{
             "email": email,
             "oldpass": oldpass,
             "newpass": newpass
@@ -104,7 +105,7 @@ const updatePass = (email, oldpass, newpass) => async (dispatch) => {
 
 const updateEmail = (oldemail, newemail) => async (dispatch) => {
     try{
-        const response = await Axios.post("https://techstar12.herokuapp.com/updateEmail",{
+        const response = await Axios.post("https://techstore1.herokuapp.com/updateEmail",{
             "email": oldemail,
             "newemail": newemail,
         });
@@ -124,7 +125,7 @@ const updateEmail = (oldemail, newemail) => async (dispatch) => {
 
 const approveUser = (userid, token) => async (dispatch) => {
     try{
-        const response = await Axios.post("https://techstar12.herokuapp.com/approve_user",{
+        const response = await Axios.post("https://techstore1.herokuapp.com/approve_user",{
             "userid": userid,
             "token": token,
         });
@@ -141,7 +142,7 @@ const approveUser = (userid, token) => async (dispatch) => {
 
 const updatePassForgot = (userid, token, newpass) => async (dispatch) => {
     try{
-        const response = await Axios.post("https://techstar12.herokuapp.com/storePassword",{
+        const response = await Axios.post("https://techstore1.herokuapp.com/storePassword",{
             "userid": userid,
             "token": token,
             "newpass": newpass
@@ -159,7 +160,7 @@ const updatePassForgot = (userid, token, newpass) => async (dispatch) => {
 
 const updateDet = (email, first_name, last_name, phonenumber, country, city) => async (dispatch) => {
     try{
-        const response = await Axios.post("https://techstar12.herokuapp.com/updateDet",{
+        const response = await Axios.post("https://techstore1.herokuapp.com/updateDet",{
             "email": email,
             "first_name": first_name,
             "last_name": last_name,

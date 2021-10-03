@@ -58,17 +58,15 @@ button {
     max-width: 400px;
     padding: 0.6rem 1.1rem 0.6rem;
     overflow: hidden;
-    margin: 1.5rem 0rem;
+    margin: 0.5rem 0rem;
   }
   .webflow-style-input-transparent-search {
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 40%;
-    padding: 0rem 1.1rem 0.3rem;
     overflow: hidden;
     margin: 1.0rem 0rem;
-
+    width: 60vw;
   }
   .inner-grad-1 {
     content: "";
@@ -120,7 +118,7 @@ button {
   
   .webflow-style-input button {
     color: #7881A1;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     line-height: 2.4rem;
     vertical-align: middle;
     transition: color 0.25s;
@@ -132,10 +130,10 @@ button {
     .webflow-style-input-transparent-search input {
     flex-grow: 1;
     color: #BFD2FF;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 2rem;
     vertical-align: middle;
-    width: 100%;
+    width: 50%;
   }
     .webflow-style-input-transparent-search input::-webkit-input-placeholder {
     color: #7881A1;
@@ -143,7 +141,7 @@ button {
   
     .webflow-style-input-transparent-search button {
     color: #7881A1;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     line-height: 2.4rem;
     vertical-align: middle;
     transition: color 0.25s;
@@ -153,10 +151,9 @@ button {
   }
 
   .webflow-style-input-transparent input {
-    flex-grow: 1;
     color: #7881A1;
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
     vertical-align: middle;
     width: 100%;
   }
@@ -166,7 +163,7 @@ button {
   
   .webflow-style-input-transparent button {
     color: #7881A1;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     line-height: 2.4rem;
     vertical-align: middle;
     transition: color 0.25s;

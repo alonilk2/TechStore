@@ -74,9 +74,19 @@ a:hover { color: #0066bf; text-decoration: none;} /* CSS link hover (green) */
 .bestseller-price {
     color: #2a53bd;
     margin-bottom: 0%;
+    text-align: center;
 }
-
-
+.swiper-slide-active {
+    transform: scale(1.0) !important;
+}
+.swiper-slide {
+    transition: all 200ms linear;
+    transform: scale(0.7);
+    height: unset !important;
+}
+.swiper-wrapper {
+    height: 40vh !important;
+}
 /* --------------- Featured Products --------------- */
 
 
@@ -115,17 +125,28 @@ a:hover { color: #0066bf; text-decoration: none;} /* CSS link hover (green) */
     font-size: 18px;
     text-align: center;
 }
+.featured-products-product-title {
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 4%;
+    font-size: 1.3rem;
+}
 .featured-products-title {
     text-align: center;
     margin-bottom: 1%;
     margin-top: 4%;
+    font-size: 1.2rem;
 }
 .featured-products-price {
     color: #2a53bd;
     margin-bottom: 0%;
+    text-align: center;
+
 }
 .showmore-title {
     color: black;
     font-size: 16px;
     margin: 2%;
+    text-align: center;
+
 }

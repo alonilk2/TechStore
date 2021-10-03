@@ -13,6 +13,7 @@ class NavBar extends Component
 	render() {
 		return (
             <div className="navbar-parent">
+                <div className="blurer"> </div>
                 <Navbar expand='lg' bg={this.props.bg}>
                     <Navbar.Brand href="/"><img src={logo} height="" alt="logo" className="d-inline-block align-top logoc"/></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

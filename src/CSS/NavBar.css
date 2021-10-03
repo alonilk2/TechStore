@@ -6,8 +6,26 @@
 
 .navbar-light 
 {
-	background: linear-gradient(270deg, rgba(171,171,171,0.2) 0%, rgba(255,255,255,0.2) 100%);
+	position: relative;
+
 }
+.blurer{
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    background-color: rgba(255,255,255,0.3);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	border-radius: 0px 0px 30px 30px;
+}
+.login-btns {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 /*	background: linear-gradient(270deg, rgba(40,40,40,0.5) 0%, rgba(97,97,97,0.5) 50%, rgba(40,40,40,0.5) 100%);
 */
 .bg-custom {
@@ -17,7 +35,8 @@
 }
 .navbar-parent
 {
-	max-height: 10vh;
+	position: relative;
+	z-index: 1;
 }
 
 .navbar-brand
@@ -34,5 +53,5 @@
 }
 
 .sign-home-btn {
-	margin-right: 15%;
+	margin-right: 1%;
 }
