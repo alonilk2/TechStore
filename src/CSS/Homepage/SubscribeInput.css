@@ -67,6 +67,7 @@ button {
     overflow: hidden;
     margin: 1.0rem 0rem;
     width: 60vw;
+    max-width: 50%;
   }
   .inner-grad-1 {
     content: "";

@@ -143,7 +143,7 @@
         margin-top: 10%;
     }
     .signin-image {
-        width: 90%;
+        width: 60%;
         overflow: hidden;
         transform: skewX(-20deg);
         right: 15%;
@@ -153,6 +153,7 @@
     .signin-form {
         margin: auto;
         margin-right: 8%;
+        width: 40%;
     }
     .signin-image-bg {
         height: 100%;

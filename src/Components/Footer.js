@@ -20,7 +20,7 @@ function footer(props)
         <div className="third-container">
             <div className="row footer-row">
                 <div className="blur-bg-footer">
-                    <div className="col">       
+                    <div className="col subscribe-col">       
                         <h5 className="subscribe-ttl"> Subscribe to our Newsletter</h5>         
                         <div class="webflow-style-input">
                             <div className="inner-grad up"> </div>
@@ -31,8 +31,8 @@ function footer(props)
                             <div className="inner-grad"> </div>
                         </div>
                     </div>
-                    <div className="col"> 
-                        <h5 className="subscribe-ttl"> Sitemap</h5>         
+                    <div className="col sitemap-col"> 
+                        <h5 className="subscribe-ttl"> Sitemap </h5>         
                         <h6 className="sitemap-row"> Sales </h6>
                         <h6 className="sitemap-row"> Why Us? </h6>
                         <h6 className="sitemap-row"> Contact Us </h6>
@@ -51,7 +51,7 @@ function footer(props)
                             <h6 className="footer-address"> Lorem Ipsum Blvd. 1234 </h6>
                             <h6 className="footer-address"> Dolor Town, Sit Amet County </h6>
                             <h6 className="footer-address"> Haifa, Israel 1700081 </h6>
-                            <img src={abdevlogo} className="abdev-logo" />
+                            <a href="http://github.com/alonilk2" className="abdev-link"><img src={abdevlogo} className="abdev-logo" /></a>
                         </div>
                     </div>
                 </div>

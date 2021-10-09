@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import { history } from '../history';
 import {useDispatch, useSelector} from 'react-redux';
 import '../CSS/Profile.css'
-import avatar from  '../images/avatar.png';
 import cookie from 'js-cookie';
 import {signout} from '../Actions/authActions';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
+
 function ProfileNavComp(props) 
 {
     const userInstance = useSelector((state) => state.user)
@@ -17,8 +17,7 @@ function ProfileNavComp(props)
         } 
 
         return (   
-            <div className="newDiv">
-                <img className="avatar" src={avatar} alt="profile picture"></img>
+            <div className="logged-in-profile-navbar">
                 <Dropdown className="user-instance">
                     <Dropdown.Toggle id="dropdown-basic">
                         Hello {userInstance.data.user.firstname}

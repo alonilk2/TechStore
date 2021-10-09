@@ -9,7 +9,7 @@ import { history } from '../history';
 function signin(email, password) {
     return dispatch => {
         dispatch({type: USER_SIGNIN_ATTEMPT, payload: {}});
-        Axios.post("https://techstore1.herokuapp.com/signin", {
+        Axios.post("http://localhost:5000/signin", {
             email: email,
             password: password
         })
@@ -37,7 +37,7 @@ function signin(email, password) {
 const signup = (email, password, firstname, lastname) => async (dispatch) => {
     dispatch({type: USER_SIGNUP_ATTEMPT, payload: {}});
     try{
-        const user = await Axios.post("https://techstore1.herokuapp.com/signup",{
+        const user = await Axios.post("http://localhost:5000/signup",{
             "email": email,
             "password": password,
             "firstname": firstname,

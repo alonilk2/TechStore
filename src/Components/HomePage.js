@@ -36,8 +36,8 @@ function HomePage(props)
     return (
         <div className="HomePage-Container">
             <div className="main-title">
-                <h1 className="main-title-h1"> All The Technology <br />You Need </h1>
-                <h2 className="main-title-h2"> In one single place. </h2>
+                <h1 className="main-title-h1"> All The Technology <br />You'll Ever Need </h1>
+                <h2 className="main-title-h2"> In one place. </h2>
                 {QuantityRow(phones, laptops, appliances,egames)}
                 <div className="sign-home-btn home-shopnow-btn">
                     <a href="/store" className="btn btn-primary btn-lg active home-btn" role="button" aria-pressed="true">Shop Now ></a>

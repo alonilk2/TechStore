@@ -6,9 +6,8 @@ h5, h6 {
     color:white;
 }
 .row {
-    margin-left: unset !important;
-    margin-right: unset !important;
-
+    margin-left: unset;
+    margin-right: unset;
 }
 .mobilesales {
     flex-direction: column !important;
@@ -105,7 +104,6 @@ h5, h6 {
     color: white;
     font-size: 1.2rem;
 }
-
 .sales-info {
     position: absolute;
     display:flex;
@@ -132,7 +130,7 @@ h5, h6 {
 
 .subscribe-ttl {
     text-align: center;
-    margin: 4rem 0rem 0.7rem;
+    margin: 5rem 0rem 0.7rem;
     font-weight: bolder;
 }
 .HomePage-Container
@@ -148,6 +146,7 @@ h5, h6 {
 .homepage-container {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 .main-title {
     margin-left: 2%;
@@ -170,7 +169,7 @@ h5, h6 {
     color: white;
     animation: 1.5s ease-out 0s 1 slideOnStartLeft;
     font-size: 30px;
-    flex: 2;
+    flex: 1;
 }
 
 .main-title-quantity-column {
@@ -210,6 +209,8 @@ h5, h6 {
 .navbar-btn { 
     color: white;
     margin: 20px;
+    font-weight: 400;
+    font-size: 16px;
 }
 .navbar-btn:hover { 
     color: #71e6ff; 
@@ -221,9 +222,12 @@ h5, h6 {
     flex-direction: column;
     text-align: center;
 }
-
+.abdev-link {
+    display: flex;
+    flex-direction: row;
+}
 .abdev-logo {
-    width: 15%;
+    width: 20%;
     margin: auto;
     margin-top: 10%;
     margin-bottom: 10%;
@@ -316,9 +320,8 @@ h5, h6 {
 }
 .sitemap-row {
     border-bottom: 1px solid;
-    margin: 1em 0em;
-    padding: 0.7em;
     border-color: rgba(255,255,255,0.4);
+    margin: 1em;
 }
 @keyframes slideOnStartLeft {
     0% {

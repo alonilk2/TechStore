@@ -24,11 +24,6 @@
     
 }
 
-.newDiv {
-    display: flex;
-    flex-direction: row;
-}
-
 .pass-col {
     flex-basis: 0;
     flex-grow: 1;
@@ -38,10 +33,4 @@
     justify-content: center;
     display: flex;
     align-items: center;
-}
-
-.signin-btn {
-    background-color: transparent !important;
-    border-color: white !important;
-    border-width: 2px;
 }

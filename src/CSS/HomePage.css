@@ -10,6 +10,7 @@
         line-height: 1.4 !important;
         overflow-x: hidden;
     }
+
     h5, h6 {
         color:#BFD2FF;
         text-align: center;
@@ -27,6 +28,7 @@
     }
     .second-container {
         max-width: 2000px;
+        padding: 0% 10%;
     }
     .third-container {
         background: rgb(0,0,0);
@@ -53,11 +55,11 @@
         float: right;
     }
     .security-paragraph-right {
-        font-size: 25px;
+        font-size: 20px !important;
         margin-right: 20%;
     }
     .security-paragraph-left {
-        font-size: 25px;
+        font-size: 20px !important;
         margin-left: 20%;
     }
 
@@ -110,6 +112,10 @@
         font-size: 1.2rem;
         line-height: 2rem;
     }
+    .security-icon-col {
+        display: flex;
+        justify-content: center;
+    }
     .sales-btn {
         position: absolute;
         height: 40px;
@@ -146,7 +152,19 @@
     }
     .subscribe-ttl {
         text-align: center;
-        margin: 9rem 0rem 0.7rem;
+        margin: 0rem !important;
+        font-weight: bolder;
+    }
+    .subscribe-col {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sitemap-col {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
     }
     .HomePage-Container
     {

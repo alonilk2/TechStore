@@ -21,6 +21,7 @@ class NavBar extends Component
                         <Nav className='mr-auto'></Nav>
                         <div className="topmenu">
                             <a href="" className="navbar-btn">Sales</a>
+                            <a href="/store" className="navbar-btn">Go Shopping</a>
                             <a href="" className="navbar-btn">Why Us?</a>
                             <a href="" className="navbar-btn">Contact Us</a>
                             <a href="" className="navbar-btn">About</a>
