@@ -1,6 +1,6 @@
-import {BEST_SELLER_FETCHED, BEST_SELLER_ERROR} from '../Constants/generalConstants';
+import {BEST_SELLER_FETCHED, BEST_SELLER_ERROR, PRODUCT_FETCHED, PRODUCT_FETCH_ERROR} from '../Constants/generalConstants';
 
-function authReducer(state = {}, action) {
+function generalReducer(state = {}, action) {
     switch (action.type) {
         case BEST_SELLER_FETCHED:{
             return {
@@ -12,7 +12,17 @@ function authReducer(state = {}, action) {
                 error: action.payload
             }
         }
+        case PRODUCT_FETCHED:{
+            return {
+                product: action.payload
+            }
+        }
+        case PRODUCT_FETCH_ERROR:{
+            return {
+                error: action.payload
+            }
+        }
         default: return state;
     }
 }
-export {authReducer};
+export {generalReducer};

@@ -48,7 +48,10 @@ function authReducer(state = {}, action) {
                 error: null
             }
         }
-        default: return state;
+        default:{ 
+            return {
+            };
+        }
     }
 }
 export {authReducer};

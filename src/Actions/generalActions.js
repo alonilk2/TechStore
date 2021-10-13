@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { history } from '../history';
-import {BEST_SELLER_FETCHED, BEST_SELLER_ERROR} from '../Constants/generalConstants';
+import {BEST_SELLER_FETCHED, BEST_SELLER_ERROR, PRODUCT_FETCHED, PRODUCT_FETCH_ERROR} from '../Constants/generalConstants';
 
 function fetchBestSellers() {
     return dispatch => {
@@ -18,5 +18,22 @@ function fetchBestSellers() {
         });
     };
 }
-
-export {fetchBestSellers}
+function fetchProduct(productId) {
+    return dispatch => {
+        Axios.get("http://localhost:5000/products/getproduct/"+productId)
+        .then(function(response) { 
+            if(response.data){
+                dispatch({type: PRODUCT_FETCHED, payload: response});
+                return response;
+            }
+            else {
+                dispatch({type: PRODUCT_FETCH_ERROR, payload: 0});
+                return null;
+            }
+        })
+        .catch(function(error) {
+            dispatch({type: PRODUCT_FETCH_ERROR, payload: error});
+        });
+    };
+}
+export {fetchBestSellers, fetchProduct}

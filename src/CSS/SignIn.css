@@ -1,12 +1,6 @@
 .signin-container{
-    background-image: url('../images/gadgets-signin.jpg');
-    background-repeat: no-repeat;
-    background-size:contain;
 }
-.blur-bg {
-    backdrop-filter: hue-rotate(-100deg) blur(5px) sepia(0.5);
-    background: linear-gradient(140deg, rgba(64,0,255,0.6) 0%, rgba(166,0,255,0.6) 100%);
-}
+
 #SignIncontainer col-xs-6 col-md-4
 {
     display: flex;
@@ -124,14 +118,9 @@
 }
 @media only screen and (min-width: 768px) {
     .signin-container{
-        background-image: url('../images/gadgets-signin.jpg');
-        background-repeat: no-repeat;
-        background-size:contain;
+
     }
-    .blur-bg {
-        backdrop-filter: hue-rotate(-100deg) blur(5px) sepia(0.5);
-        background: linear-gradient(140deg, rgba(64,0,255,0.6) 0%, rgba(166,0,255,0.6) 100%);
-    }
+
     #SignIncontainer col-xs-6 col-md-4
     {
         display: flex;

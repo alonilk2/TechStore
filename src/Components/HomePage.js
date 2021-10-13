@@ -1,7 +1,7 @@
 import React, { useEffect, useState ,useReducer } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Axios from 'axios';
-import history from '../history';
+import { history } from '../history';
 import '../CSS/HomePage-mobile.css';
 import '../CSS/HomePage.css';
 import '../CSS/Homepage/SubscribeInput.css';
@@ -40,7 +40,7 @@ function HomePage(props)
                 <h2 className="main-title-h2"> In one place. </h2>
                 {QuantityRow(phones, laptops, appliances,egames)}
                 <div className="sign-home-btn home-shopnow-btn">
-                    <a href="/store" className="btn btn-primary btn-lg active home-btn" role="button" aria-pressed="true">Shop Now ></a>
+                    <button onClick={() => history.push('/store')} className="btn btn-primary btn-lg active home-btn" role="button" aria-pressed="true">Shop Now ></button>
                 </div>
             </div>
         </div>

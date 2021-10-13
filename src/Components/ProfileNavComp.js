@@ -9,18 +9,17 @@ import Button from 'react-bootstrap/Button';
 
 function ProfileNavComp(props) 
 {
-    const userInstance = useSelector((state) => state.user)
+    const userInstance = cookie.get('userInstance');
     const dispatch = useDispatch();
     if(userInstance) {
-        function onClickPc(){
-            history.push('/Constraction');
-        } 
+        const user = JSON.parse(userInstance);
+        console.log(userInstance)
 
         return (   
             <div className="logged-in-profile-navbar">
                 <Dropdown className="user-instance">
                     <Dropdown.Toggle id="dropdown-basic">
-                        Hello {userInstance.data.user.firstname}
+                        Hello {user.data.user.firstname}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>

@@ -12,6 +12,8 @@ import Signin from './Views/Signin';
 import Signup from './Views/Signup';
 import ApproveView from './Views/ApproveView';
 import StoreHomeView from './Views/StoreHome';
+import ProductView from './Views/Store/Product';
+import ProfileView from './Views/ProfileView';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +23,8 @@ ReactDOM.render(
             <Route exact path="/" component={HomePage} />
             <Route path="/Signin" component={Signin} />
             <Route path="/signup" component={Signup} />
+            <Route path="/profile" component={ProfileView} />
+            <Route path="/store/product/:productId" component={ProductView} />
             <Route path="/store" component={StoreHomeView} />
             <Route path="/activate/:userid/:token" component={ApproveView} />
 
