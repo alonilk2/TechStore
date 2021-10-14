@@ -9,7 +9,7 @@ import { history } from '../history';
 function signin(email, password) {
     return dispatch => {
         dispatch({type: USER_SIGNIN_ATTEMPT, payload: {}});
-        Axios.post("http://localhost:5000/signin", {
+        Axios.post("https://techstore1.herokuapp.com/signin", {
             email: email,
             password: password
         })
@@ -33,11 +33,31 @@ function signin(email, password) {
     };
 
 }
+const getAvatar = (id) => async (dispatch) => {
+    try{
+        console.log(id)
+        const img = await Axios.post('https://techstore1.herokuapp.com/load-avatar', {
+            "userId": id
+        });
+        return img; 
+    } catch(err) {
+      console.log(err);
+    }
+}
+const uploadAvatar = (formdata) => async (dispatch) => {
+    try{
+        console.log(formdata)
+        const img = await Axios.post('https://techstore1.herokuapp.com/uploadavatar', formdata);
+        return img; 
+    } catch(err) {
+      console.log(err);
+    }
+}
 
 const signup = (email, password, firstname, lastname) => async (dispatch) => {
     dispatch({type: USER_SIGNUP_ATTEMPT, payload: {}});
     try{
-        const user = await Axios.post("http://localhost:5000/signup",{
+        const user = await Axios.post("https://techstore1.herokuapp.com/signup",{
             "email": email,
             "password": password,
             "firstname": firstname,
@@ -185,4 +205,4 @@ const signout = () => (dispatch) => {
     dispatch({type: USER_SIGNOUT_SUCCESS});
 }
 
-export {signin, signup, signout, forgotPass, updatePass, updateDet, updatePassForgot, approveUser, updateEmail};
+export {signin, signup, signout, forgotPass, updatePass, updateDet, updatePassForgot, approveUser, updateEmail, getAvatar, uploadAvatar};

@@ -4,7 +4,7 @@ import {BEST_SELLER_FETCHED, BEST_SELLER_ERROR, PRODUCT_FETCHED, PRODUCT_FETCH_E
 
 function fetchBestSellers() {
     return dispatch => {
-        Axios.get("http://localhost:5000/products/getbestsellers")
+        Axios.get("https://techstore1.herokuapp.com/products/getbestsellers")
         .then(function(response) { 
             if(response.data){
                 dispatch({type: BEST_SELLER_FETCHED, payload: response});
@@ -20,7 +20,7 @@ function fetchBestSellers() {
 }
 function fetchProduct(productId) {
     return dispatch => {
-        Axios.get("http://localhost:5000/products/getproduct/"+productId)
+        Axios.get("https://techstore1.herokuapp.com/products/getproduct/"+productId)
         .then(function(response) { 
             if(response.data){
                 dispatch({type: PRODUCT_FETCHED, payload: response});

@@ -25,17 +25,16 @@ function BestSellerBar(props)
             <div>
                 <h2 className="bestseller-title" >Best Sellers </h2>
                 <div className="row best-seller-container">
-                    <div className="col best-seller-col">
+                    <a href={"/store/product/1"} className="col best-seller-col">
                         <img src={dell} className="bestseller-img" />
                         <h4 className="bestseller-title-product"> Dell XPS 17" </h4>
                         <h5 className="bestseller-price"> 3190$ </h5>
-
-                    </div>
-                    <div className="col best-seller-col">
+                    </a>
+                    <a href={"/store/product/8"} className="col best-seller-col">
                         <img src={iphone} className="bestseller-img" />
                         <h4 className="bestseller-title-product"> iPhone 12 Pro Max </h4>
                         <h5 className="bestseller-price"> 1199$ </h5>
-                    </div>
+                    </a>
                     <div className="col best-seller-col">
                         <img src={casio} className="bestseller-img" />
                         <h4 className="bestseller-title-product"> Casio G-Shock </h4>

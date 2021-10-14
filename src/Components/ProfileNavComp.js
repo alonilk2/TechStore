@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { history } from '../history';
 import {useDispatch, useSelector} from 'react-redux';
-import '../CSS/Profile.css'
+import './Profile/Profile.css'
 import cookie from 'js-cookie';
 import {signout} from '../Actions/authActions';
 import Dropdown from 'react-bootstrap/Dropdown';
