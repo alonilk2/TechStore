@@ -51,13 +51,15 @@ function BestSellerBar(props)
             fetchBestSellerList();
     });
     function renderProductList(){
-        if(ProductList) {
+        console.log(ProductList)
+        if(ProductList.length > 1) {
             return ProductList.map(function(product) {
+                console.log(product)
                 return (
                     <a href={"/store/product/"+product.productid} className="col best-seller-col">
                         <img src={product.imgurl} className="bestseller-img" />
-                        <h4 className="bestseller-title-product"> {product.producttitle} </h4>
-                        <h5 className="bestseller-price"> {product.price} </h5>
+                        <h4 className="bestseller-title-product"> {product.product.producttitle} </h4>
+                        <h5 className="bestseller-price"> {product.product.price} </h5>
                     </a>
                 )
             })
