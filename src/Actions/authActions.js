@@ -33,21 +33,19 @@ function signin(email, password) {
     };
 
 }
-const getAvatar = (id) => async (dispatch) => {
+// const getAvatar = (id) => async (dispatch) => {
+//     try{
+//         const img = await Axios.post('https://techstore1.herokuapp.com/load-avatar', {
+//             "userId": id
+//         });
+//         return img; 
+//     } catch(err) {
+//       console.log(err);
+//     }
+// }
+const uploadAvatar = (fdata) => async (dispatch) => {
     try{
-        console.log(id)
-        const img = await Axios.post('https://techstore1.herokuapp.com/load-avatar', {
-            "userId": id
-        });
-        return img; 
-    } catch(err) {
-      console.log(err);
-    }
-}
-const uploadAvatar = (formdata) => async (dispatch) => {
-    try{
-        console.log(formdata)
-        const img = await Axios.post('https://techstore1.herokuapp.com/uploadavatar', formdata);
+        const img = await Axios.post('https://techstore1.herokuapp.com/uploadavatar', fdata);
         return img; 
     } catch(err) {
       console.log(err);
@@ -205,4 +203,4 @@ const signout = () => (dispatch) => {
     dispatch({type: USER_SIGNOUT_SUCCESS});
 }
 
-export {signin, signup, signout, forgotPass, updatePass, updateDet, updatePassForgot, approveUser, updateEmail, getAvatar, uploadAvatar};
+export {signin, signup, signout, forgotPass, updatePass, updateDet, updatePassForgot, approveUser, updateEmail, uploadAvatar};

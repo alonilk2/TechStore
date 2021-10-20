@@ -6,24 +6,50 @@ import cookie from 'js-cookie';
 import {useDropzone} from 'react-dropzone';
 import { getAvatar, uploadAvatar } from '../../Actions/authActions';
 import { Base64 } from 'js-base64';
+import { history } from '../../history';
 
+async function exists(url) { 
+    let prom = await fetch(url)
+    return prom;
+}
 
 function Profile(props) {
     const userInstance = cookie.get('userInstance');
     const dispatch = useDispatch();
     const data = (JSON.parse(userInstance)).data;
     const [newfile, setFile] = useState([]);
-    const [imgString, setImage] = useState('');
     const [strTXT, setText] = useState([]);
-
-    useEffect(() => {
-        const img = dispatch(getAvatar(data.user.id));
-        var imgstr = img.then((res) => {
-            let u8s = new Uint8Array(res.data.image.data);
-            setImage("data:"+res.data.contentType+";base64,"+Base64.fromUint8Array(u8s))
-        }).catch((err) => {
-            console.log(err);
+    const [imgString, setImage] = useState([]);
+    const fetchAndSetPNG = async () => {
+        exists("https://cloud-cube-us2.s3.amazonaws.com/t09vuh9fptce/public/1/"+data.user.id+".png").then(res =>{
+            if(res.status === 200){
+                setImage("https://cloud-cube-us2.s3.amazonaws.com/t09vuh9fptce/public/1/"+data.user.id+".png");
+                return;
+            }
+            fetchAndSetJPG(".jpg");
+            console.log('~~~~~~~PNG')
+            console.log(res)
+        }).catch(err =>{
+            console.log('~~~~~~~PNG-ERROR')
+            console.log(err)
+            fetchAndSetJPG(".jpg");
         })
+    }
+    const fetchAndSetJPG = async () => {
+        exists("https://cloud-cube-us2.s3.amazonaws.com/t09vuh9fptce/public/1/"+data.user.id+".jpg").then(res =>{
+            if(res.status === 200){
+                setImage("https://cloud-cube-us2.s3.amazonaws.com/t09vuh9fptce/public/1/"+data.user.id+".jpg");
+            }
+            console.log('~~~~~~~JPG')
+            console.log(res)
+        }).catch(err =>{
+            console.log('~~~~~~~JPG-ERROR')
+            console.log(err)
+        })
+    }
+    useEffect(() => {
+        if(data)
+            fetchAndSetPNG();
     }, [])
     const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
     const files = acceptedFiles.map(file => (
@@ -33,17 +59,19 @@ function Profile(props) {
     ));
     const handleUpload = (e) => {
         e.preventDefault();
-        const fdata = new FormData()
-        fdata.append('avatar', acceptedFiles[0]);
+        const fdata = new FormData();
         fdata.append('email', data.user.email);
+        fdata.append('avatar', acceptedFiles[0]);
         let res = dispatch(uploadAvatar(fdata))
         res.then(result => {
-            console.log(result)
-            let u8s = new Uint8Array(result.data.image.data);
-            setImage("data:"+res.contentType+";base64,"+Base64.fromUint8Array(u8s))
+            if(result){
+                if(result.data.success) {
+                    fetchAndSetPNG();
+                    history.go(0);
+                }
+            }
         })
     }
-
     return (   
         <div>
             <div className="container">

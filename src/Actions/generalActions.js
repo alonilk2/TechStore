@@ -20,19 +20,12 @@ function fetchBestSellers() {
 }
 function fetchProduct(productId) {
     return dispatch => {
+        console.log(productId)
         Axios.get("https://techstore1.herokuapp.com/products/getproduct/"+productId)
         .then(function(response) { 
-            if(response.data){
                 dispatch({type: PRODUCT_FETCHED, payload: response});
-                return response;
-            }
-            else {
-                dispatch({type: PRODUCT_FETCH_ERROR, payload: 0});
-                return null;
-            }
-        })
-        .catch(function(error) {
-            dispatch({type: PRODUCT_FETCH_ERROR, payload: error});
+        }).catch(function(error) {
+            // dispatch({type: PRODUCT_FETCH_ERROR, payload: error});
         });
     };
 }
