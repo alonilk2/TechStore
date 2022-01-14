@@ -1,4 +1,4 @@
-# TechStore - All the technology you need in one single place.
+# TechStore - E-Commerce Website Template
 
 ![TechStore](https://eamobileisrael.com/techstore.png)
 
