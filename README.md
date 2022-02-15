@@ -8,7 +8,7 @@
 
 ## Description
 TechStore is an E-Commerce website for luxurious technology products and gadgets.
-It's an ongoing project, intended to be a fully functional, secured and highly featured e-commerce website.
+It's an ongoing project, that is intended to be a fully functional, secured and highly featured e-commerce website.
 The current version that is published contains a working User Authentication system, a responsive UI and a PostgreSQL database connection.
 
 ## Development Stack
