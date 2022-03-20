@@ -1,6 +1,6 @@
 # TechStore - E-Commerce Website Template
 
-![TechStore](https://alonilk2.github.io/map1/techstore.png)
+![TechStore](https://alonilk2.github.io/map1/techstore.jpg)
 
 
 ### [TechStore URL](http://techstore1.herokuapp.com/)
